@@ -1,0 +1,19 @@
+"use client";
+import {Box, Text} from "@chakra-ui/react";
+import Portret from "@/assets/portret.jpg";
+import Image from "next/image";
+
+const ProfileAuthor = () => {
+    return(
+        <Box paddingLeft={"200px"} paddingRight={"200px"} marginTop={"20px"}>
+            <Box mb={"20px"}>
+                <Image width={300} height={200} src={Portret} alt={"author portret"} />
+            </Box>
+            <Text fontSize={"24px"} textAlign={"justify"}>
+                Светлана Мучнова - художник, автор энергетических картин и икон, специалист по китайской даосской энергетической медицине, по вибрации и интонации голоса, по кристаллам и камням, автор стихов. С 2006 года является автором энергетических картин и икон. В 2010 году, получив благословение в Кафедральном Соборе г. Пермь, вплотную занялась написанием икон (художественная летопись). Краски для написания икон и картин Светлана изготавливает сама из натуральных камней по технологии времён античности.С 2015 года участница многих персональных выставок. Её работы находятся в Храме, галерее Тутти-Кванти г. Санкт-Петербург (ул. Радищева, д. 37) и частных коллекциях России, Норвегии, Израиля, Дании, Польши, Украины, Мексики, Кипр, Франция, Чехия, Италия, Испания, Египет, Эстония, Великобритания. На 1-е июня 2022 года автором написано 764 работы, из них 747 в частных коллекциях. Светлана Мучнова – художник с большим творческим потенциалом, с хорошо развитой интуицией, с глубоким знанием истории и древней философии, находится постоянно в движении. Светлану Мучнову отличает оригинальность мышления и самобытность. Всегда большие творческие планы, а искусство созвучно времени и отвечает духовным, эстетическим, нравственным исканием людей. Своим творчеством автор зовёт нас к гармонии, красоте и совершенству. В центре внимания Светланы - человек и его душа. В работах мастера мечты свободно превращаются в реальность. При помощи творчества стремится приблизиться к глубоким тайнам мироздания. Translation Svetlana Muchnova is an artist, author of energy paintings and icons, a specialist in Chinese Taoist energy medicine, voice vibration and intonation, crystals and stones, and an author of poetry. Since 2006, she has been the author of energy paintings and icons. In 2010, having received a blessing in the Cathedral of Perm, she took up painting icons (an artist chronicle). Paints for writing icons and paintings Svetlana makes herself from natural stones using the technology of antiquity. Since 2015, she has been a participant in many solo exhibitions. Her works are in the Temple, the Tutti-Quanti gallery in St. Petersburg (Radishcheva street, 37) and private collections in Russia, Norway, Israel, Denmark, Poland, Ukraine, Mexico, Cyprus, France, Czech Republic, Italy, Spain , Egypt, Estonia, UK. As of June 1, 2022, the author has written 764 works, of which 747 are in private collections. Svetlana Muchnova is an artist with great creative potential, well-developed intuition, deep knowledge of history and ancient philosophy, and is constantly on the move. Svetlana Muchnova is distinguished by originality of thinking and originality. There are always great creative plans, and art keeps pace with the time and responds to the spiritual, aesthetic, moral quests of people. With her work, the author calls us to harmony, beauty and perfection. The focus of Svetlana is a person and their soul. In the works of the master, dreams freely turn into reality. With the help of creativity, she seeks to approach the deep secrets of the universe.
+            </Text>
+        </Box>
+    );
+};
+
+export default ProfileAuthor;

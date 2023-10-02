@@ -1,0 +1,42 @@
+{
+  "name": "pictures-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@reduxjs/toolkit": "^1.9.6",
+    "@types/react-slick": "^0.23.10",
+    "@types/redux": "^3.6.0",
+    "framer-motion": "^10.16.4",
+    "next": "latest",
+    "react": "latest",
+    "react-alice-carousel": "^2.7.1",
+    "react-dom": "latest",
+    "react-icons": "^4.11.0",
+    "react-images-uploading": "^3.1.7",
+    "react-redux": "^8.1.2",
+    "react-slick": "^0.29.0",
+    "redux": "^4.2.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
