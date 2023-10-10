@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type {Metadata} from 'next'
+import {Inter} from 'next/font/google'
 import {Providers} from "@/app/providers";
 import Header from "@/ui-components/Header";
 
@@ -24,5 +24,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  )
-}
+  );
+};

@@ -1,17 +1,17 @@
 "use client";
 import Footer from "@/ui-components/Footer";
 import {Box} from "@chakra-ui/react";
-import AboutLifeList from "@/components/about-life/AboutLifeList";
+import CrystalStonesList from "@/components/crystal-stones/CrystalStonesList";
 
-const AboutLifeListLayout = () => {
+const CrystalStonesLayout = () => {
     return(
         <Box display={"flex"} flexDirection={"column"}>
-            <Box display={"flex"} justifyContent={"center"}  mt={10}>
-                <AboutLifeList />
+            <Box display={"flex"} justifyContent={"center"} mt={10}>
+                <CrystalStonesList />
             </Box>
             <Footer />
         </Box>
     );
 };
 
-export default AboutLifeListLayout;
+export default CrystalStonesLayout;

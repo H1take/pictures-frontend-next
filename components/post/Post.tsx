@@ -1,10 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
-import {Box, Text, Button, Image} from "@chakra-ui/react";
+import {useState} from "react";
+import {Box, Button, Image, Text} from "@chakra-ui/react";
+import {useAppSelector} from "@/store/store";
+import {RootState} from "@/store/type";
 
-const Post = () => {
+const Post = ({ titleRu, titleEng, textRu, textEng, titleImage, images } : { titleRu: string; titleEng: string; textRu: string; textEng: string; titleImage: string; images: string[] }) => {
     const [isShowMore, setIsShowMore] = useState<boolean>(false);
     const [lines, setLines] = useState<number | undefined>(3);
+
+    const { language } = useAppSelector((state: RootState) => state.language);
 
     const changeShowStatus = () => {
         setIsShowMore(!isShowMore);
@@ -16,17 +20,20 @@ const Post = () => {
     }
 
     return(
-        <Box width={"1300px"} height={"auto"} borderRadius={"1.5rem"} boxShadow={"4px 4px 36px 0px rgba(34, 60, 80, 0.2)"}>
+        <Box width={["300px", "1300px"]} height={"auto"} borderRadius={"1.5rem"} boxShadow={"4px 4px 36px 0px rgba(34, 60, 80, 0.2)"}>
             <Box>
-                <Image width={"100%"} borderRadius={"1.5rem 1.5rem 0 0"} height={300} src={"https://thumbs.dreamstime.com/b/morning-fog-3410397.jpg"} alt={"photo"} />
+                <Image width={"100%"} borderRadius={"1.5rem 1.5rem 0 0"} height={300} src={`http://localhost:5000/files/${titleImage}`} alt={"photo"} />
             </Box>
             <Box display={"flex"} flexDirection={"column"} padding={5}>
                 <Box display={"flex"} gap={3} alignItems={"center"} justifyContent={"flex-start"}>
-                    <Text fontSize={"30px"}>title</Text>
+                    <Text fontSize={"30px"}>{language === "ru" ? titleRu : titleEng}</Text>
                     {!isShowMore ? <Button onClick={changeShowStatus}>Читать</Button> : <Button onClick={changeShowStatus}>Свернуть</Button>}
                 </Box>
                 <Box>
-                    <Text noOfLines={lines}>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).</Text>
+                    <Text noOfLines={lines}>{language === "ru" ? textRu : textEng}</Text>
+                    <Box display={"flex"} alignItems={"center"} flexDirection={"column"} gap={3}>
+                        {images?.map((image: string, index: number) => (<Image borderRadius={"1.5rem"} width={["350px", "550px"]} key={index} src={`http://localhost:5000/files/${image}`} alt={"photo"} />))}
+                    </Box>
                 </Box>
             </Box>
         </Box>
