@@ -1,6 +1,6 @@
 import axios, {AxiosInstance} from "axios";
 
-const backend_url = "http://localhost:5000/";
+const backend_url = "http://svetlanamuchnova.art/";
 
 export class HttpInstanceFactory {
     private static baseInstance: AxiosInstance | null = null;
