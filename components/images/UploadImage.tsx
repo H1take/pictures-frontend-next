@@ -107,13 +107,13 @@ const UploadImage = ({ typeImg }: { typeImg: string }) => {
                             </Box>
                         ))}
                         {typeImg === "photo" && photo && <Box>
-                            <Image src={`http://localhost:5000/files/${photo}`} alt={photo} width={"150px"} borderRadius={"1.5rem"} />
+                            <Image src={`http://svetlanamuchnova.art/files/${photo}`} alt={photo} width={"150px"} borderRadius={"1.5rem"} />
                             <Box display={"flex"} mt={3} gap={3}>
                                 <Button colorScheme={"red"} onClick={() => onRemove(photo, "photo")}>Удалить</Button>
                             </Box>
                         </Box>}
                         {typeImg === "titleImage" && titleImage && <Box>
-                            <Image src={`http://localhost:5000/files/${titleImage}`} alt={titleImage} width={"150px"} borderRadius={"1.5rem"} />
+                            <Image src={`http://svetlanamuchnova.art/files/${titleImage}`} alt={titleImage} width={"150px"} borderRadius={"1.5rem"} />
                             <Box display={"flex"} mt={3} gap={3}>
                                 <Button colorScheme={"red"} onClick={() => onRemove(titleImage, "titleImage")}>Удалить</Button>
                             </Box>
@@ -130,7 +130,7 @@ const UploadImage = ({ typeImg }: { typeImg: string }) => {
                         {typeImg === "images" && images && images.map((image, index) => {
                             return (
                                 <Box key={index} mt={3}>
-                                    <Image src={`http://localhost:5000/files/${image}`} alt={image} width={"150px"} borderRadius={"1.5rem"} />
+                                    <Image src={`http://svetlanamuchnova.art/files/${image}`} alt={image} width={"150px"} borderRadius={"1.5rem"} />
                                     <Box display={"flex"} mt={3} gap={3}>
                                         <Button colorScheme={"red"} onClick={() => onRemove(image, "images")}>Удалить</Button>
                                     </Box>
@@ -149,7 +149,7 @@ const UploadImage = ({ typeImg }: { typeImg: string }) => {
                         {typeImg === "reviewImages" && reviewImages && reviewImages.map((image, index) => {
                             return (
                                 <Box key={index} mt={3}>
-                                    <Image src={`http://localhost:5000/files/${image}`} alt={image} width={"150px"} borderRadius={"1.5rem"} />
+                                    <Image src={`http://svetlanamuchnova.art/files/${image}`} alt={image} width={"150px"} borderRadius={"1.5rem"} />
                                     <Box display={"flex"} mt={3} gap={3}>
                                         <Button colorScheme={"red"} onClick={() => onRemove(image, "reviewImages")}>Удалить</Button>
                                     </Box>
