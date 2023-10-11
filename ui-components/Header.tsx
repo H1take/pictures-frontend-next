@@ -13,13 +13,15 @@ import {
     IconButton,
     Select,
     Text,
-    useDisclosure
+    useDisclosure,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import {FiMenu} from "react-icons/fi";
 import Link from "next/link";
 import {useAppDispatch, useAppSelector} from "@/store/store";
 import {RootState} from "@/store/type";
 import {changeLanguage} from "@/store/slices/language.slice";
+import Logo from "@/assets/logo.jpg";
 
 const Header = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -39,7 +41,7 @@ const Header = () => {
             w={"full"}
             backgroundColor={"blue.500"}
             color={"white"}
-            height={"70px"}
+            height={"100px"}
             pl={[0, 3]}
             pr={[0, 3]}
         >
@@ -53,9 +55,12 @@ const Header = () => {
                        onClick={onOpen}
                        ref={btnRef}
                    />
-                   <Text fontSize={["xl", "2xl"]} as="b">
-                       {language === "ru" ? "Светлана Мучнова" : "Svetlana Mychnova"}
-                   </Text>
+                   <Box display={'flex'} alignItems={'center'} gap={3}>
+                       <Image width={70} height={70} style={{ borderRadius: "50%"}} src={Logo} alt={"logo"} />
+                       <Text fontSize={["xl", "2xl"]} as="b">
+                           {language === "ru" ? "Светлана Мучнова" : "Svetlana Mychnova"}
+                       </Text>
+                   </Box>
                </Flex>
                <Drawer
                    isOpen={isOpen}
