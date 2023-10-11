@@ -18,6 +18,6 @@ export class FileApi {
     async uploadFile(file: any, typeImg: string) {
         const formData = new FormData();
         formData.append('file', file)
-        return (await axios.post(`http://localhost:5000/files/upload/${typeImg}`, formData)).data;
+        return (await axios.post(`http://svetlanamuchnova.art:5000/files/upload/${typeImg}`, formData)).data;
     }
 }
