@@ -9,7 +9,7 @@ const ReviewInfo = ({ authorName, text, images }: { authorName: string; text: st
                 <Text>{text}</Text>
                 <Box display={"flex"} gap={3}>
                     {images?.map((image: string, index: number) => (
-                        <Image key={index} src={`http://svetlanamuchnova.art/files/${image}`} alt={image} width={"100px"} borderRadius={"1.5rem"} />
+                        <Image key={index} src={`http://svetlanamuchnova.art:5000/files/${image}`} alt={image} width={"100px"} borderRadius={"1.5rem"} />
                     ))}
                 </Box>
             </Box>

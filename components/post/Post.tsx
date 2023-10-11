@@ -22,7 +22,7 @@ const Post = ({ titleRu, titleEng, textRu, textEng, titleImage, images } : { tit
     return(
         <Box width={["300px", "1300px"]} height={"auto"} borderRadius={"1.5rem"} boxShadow={"4px 4px 36px 0px rgba(34, 60, 80, 0.2)"}>
             <Box>
-                <Image width={"100%"} borderRadius={"1.5rem 1.5rem 0 0"} height={300} src={`http://svetlanamuchnova.art/files/${titleImage}`} alt={"photo"} />
+                <Image width={"100%"} borderRadius={"1.5rem 1.5rem 0 0"} height={300} src={`http://svetlanamuchnova.art:5000/files/${titleImage}`} alt={"photo"} />
             </Box>
             <Box display={"flex"} flexDirection={"column"} padding={5}>
                 <Box display={"flex"} gap={3} alignItems={"center"} justifyContent={"flex-start"}>
@@ -32,7 +32,7 @@ const Post = ({ titleRu, titleEng, textRu, textEng, titleImage, images } : { tit
                 <Box>
                     <Text noOfLines={lines}>{language === "ru" ? textRu : textEng}</Text>
                     <Box display={"flex"} alignItems={"center"} flexDirection={"column"} gap={3}>
-                        {images?.map((image: string, index: number) => (<Image borderRadius={"1.5rem"} width={["350px", "550px"]} key={index} src={`http://svetlanamuchnova.art/files/${image}`} alt={"photo"} />))}
+                        {images?.map((image: string, index: number) => (<Image borderRadius={"1.5rem"} width={["350px", "550px"]} key={index} src={`http://svetlanamuchnova.art:5000/files/${image}`} alt={"photo"} />))}
                     </Box>
                 </Box>
             </Box>
