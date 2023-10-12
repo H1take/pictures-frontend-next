@@ -91,7 +91,7 @@ const Header = () => {
                            </Link>
                            <Link href={"/energy-pictures"}>
                                <Button variant="outline" colorScheme="blue" justifyContent={"flex-start"} width={"290px"}>
-                                   {language === "ru" ? "Энерегетические картины и иконы" : "Energy pictures and stones"}
+                                   {language === "ru" ? "Энергетические картины и иконы" : "Energy pictures and stones"}
                                </Button>
                            </Link>
                            <Link href={"/crystals-stones"}>
