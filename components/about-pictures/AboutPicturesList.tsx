@@ -16,7 +16,7 @@ const AboutPicturesList = () => {
     return(
         <Box mt={5} display={"flex"} flexDirection={"column"} gap={3}>
             {posts.map((post, index) => (
-                <Post key={index} titleRu={post.titleRu} titleEng={post.titleEng} images={post.images} titleImage={post.imageTitle} textRu={post.textRu} textEng={post.textEng} />
+                <Post key={index} id={post.id} titleRu={post.titleRu} titleEng={post.titleEng} images={post.images} titleImage={post.imageTitle} textRu={post.textRu} textEng={post.textEng} />
             ))}
         </Box>
     );
