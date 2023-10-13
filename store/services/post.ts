@@ -41,4 +41,8 @@ export class PostApi {
     async updatePost(data: IPost): Promise<IPost> {
         return (await this.httpInstance.patch<IPost>('/posts/info')).data;
     }
+
+    async deletePost(id: number) {
+        return (await this.httpInstance.delete(`/posts/${id}`)).data;
+    }
 };

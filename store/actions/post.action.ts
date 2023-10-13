@@ -17,3 +17,9 @@ export const updatePost = createAsyncThunk('patch/posts/info', async (data: IPos
     const response = await postApi.updatePost(data);
     return response;
 });
+
+export const deletePost = createAsyncThunk('delete/posts/id', async (data: number, thunkAPI) => {
+    const response = await postApi.deletePost(data);
+    return response;
+});
+

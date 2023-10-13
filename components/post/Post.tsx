@@ -1,14 +1,17 @@
 "use client";
 import {useState} from "react";
 import {Box, Button, Image, Text} from "@chakra-ui/react";
-import {useAppSelector} from "@/store/store";
+import {useActions, useAppSelector} from "@/store/store";
 import {RootState} from "@/store/type";
 
-const Post = ({ titleRu, titleEng, textRu, textEng, titleImage, images } : { titleRu: string; titleEng: string; textRu: string; textEng: string; titleImage: string; images: string[] }) => {
+const Post = ({ id, titleRu, titleEng, textRu, textEng, titleImage, images } : { id: number; titleRu: string; titleEng: string; textRu: string; textEng: string; titleImage: string; images: string[] }) => {
     const [isShowMore, setIsShowMore] = useState<boolean>(false);
     const [lines, setLines] = useState<number | undefined>(3);
 
     const { language } = useAppSelector((state: RootState) => state.language);
+    const { isLoggedIn } = useAppSelector((state: RootState) => state.admin);
+
+    const { deletePost } = useActions();
 
     const changeShowStatus = () => {
         setIsShowMore(!isShowMore);
@@ -19,15 +22,23 @@ const Post = ({ titleRu, titleEng, textRu, textEng, titleImage, images } : { tit
         }
     }
 
+    const onDelete = (id: number) => {
+        deletePost(id);
+    }
+
+    // @ts-ignore
     return(
         <Box width={["300px", "1300px"]} height={"auto"} borderRadius={"1.5rem"} boxShadow={"4px 4px 36px 0px rgba(34, 60, 80, 0.2)"}>
             <Box>
                 <Image width={"100%"} borderRadius={"1.5rem 1.5rem 0 0"} height={300} src={`http://svetlanamuchnova.art:5000/files/${titleImage}`} alt={"photo"} />
             </Box>
             <Box display={"flex"} flexDirection={"column"} padding={5}>
-                <Box display={"flex"} gap={3} alignItems={"center"} justifyContent={"flex-start"}>
+                <Box display={"flex"} gap={3} flexDirection={"column"} alignItems={"center"} justifyContent={"flex-start"}>
                     <Text fontSize={"30px"}>{language === "ru" ? titleRu : titleEng}</Text>
-                    {!isShowMore ? <Button onClick={changeShowStatus}>Читать</Button> : <Button onClick={changeShowStatus}>Свернуть</Button>}
+                    <Box>
+                        {!isShowMore ? <Button onClick={changeShowStatus}>Читать</Button> : <Button onClick={changeShowStatus}>Свернуть</Button>}
+                        {isLoggedIn && <Button ml={"10px"} onClick={() => onDelete(id)}>Удалить</Button>}
+                    </Box>
                 </Box>
                 <Box>
                     <Text noOfLines={lines}>{language === "ru" ? textRu : textEng}</Text>
